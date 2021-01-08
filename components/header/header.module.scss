@@ -1,0 +1,112 @@
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--black);
+  color: #fff;
+  transition: 0.3s;
+  height: 70px;
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+  &.transparent {
+    box-shadow: none;
+    background: transparent;
+    @media (max-width: 1000px) {
+      background: var(--black);
+      box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+    }
+  }
+  .inner {
+    height: 70px;
+    padding: 0 16px;
+    @include flexCenter();
+    .navlist {
+      @include flexCenter();
+      @media (max-width: 1000px) {
+        display: none;
+      }
+      li {
+        margin: 0 15px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover {
+          color: var(--main);
+        }
+      }
+    }
+    .phoneNum {
+      display: flex;
+      span {
+        margin-left: 5px;
+        line-height: 24px;
+      }
+      @media (max-width: 576px) {
+        font-size: 12px;
+        svg {
+          width: 10px;
+        }
+      }
+    }
+    .logo {
+      max-width: 170px;
+      @include flexCenter();
+      img {
+        width: 100%;
+        height: auto;
+      }
+      @media (max-width: 576px) {
+        max-width: 120px;
+      }
+    }
+    .hamburger_cont {
+      color: #fff;
+      display: none;
+      align-items: center;
+      height: 70px;
+      @media (max-width: 1000px) {
+        display: flex;
+      }
+      .line_container {
+        cursor: pointer;
+        width: 36px;
+        height: 29px;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .line {
+          width: 26px;
+          border-radius: 1px;
+          height: 3px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  .mobile_menu {
+    background: var(--black);
+    width: 100%;
+    max-width: 270px;
+    height: 100vh;
+    ul {
+      padding: 30px 0;
+      li {
+        font-size: 14px;
+        cursor: pointer;
+        padding: 12px 20px;
+        transition: 0.3s;
+        &:hover,
+        &.active {
+          background: var(--main);
+        }
+      }
+    }
+  }
+}
