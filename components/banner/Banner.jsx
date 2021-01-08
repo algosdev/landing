@@ -12,6 +12,7 @@ function Banner() {
     <div className={style.wrapper}>
       <div className={style.inner}>
         <div className={style.slider}>
+          <img src='/images/banner_bg1.jpg' alt='Banner' />
           <div className={style.main}>
             <div className={style.caption_img}>
               <img src='/images/banner_img1.jpg' alt='Banner image' />
@@ -26,18 +27,18 @@ function Banner() {
               </a>
             </div>
           </div>
-          <div className={style.control}>
-            <button>
-              <ArrowLeftIcon />
-            </button>
-            <button>
-              <ArrowRightIcon />
-            </button>
-          </div>
+        </div>
+        <div className={style.control}>
+          <button>
+            <ArrowLeftIcon />
+          </button>
+          <button>
+            <ArrowRightIcon />
+          </button>
         </div>
         <div className={style.follow}>
           <div className={style.txt}>
-            <span>FOLLOW US</span> <div className={style.line}></div>
+            <div>FOLLOW US</div> <div className={style.line}></div>
           </div>
           <div className={style.socials}>
             <a href=''>
@@ -52,7 +53,6 @@ function Banner() {
           </div>
         </div>
       </div>
-      <img src='/images/banner_bg1.jpg' alt='Banner picture'></img>
     </div>
   )
 }

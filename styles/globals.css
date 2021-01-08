@@ -30,10 +30,38 @@ a {
 ul {
   list-style-type: none;
 }
+img {
+  width: 100%;
+  height: auto;
+}
 
 /* Common styles */
 
 button {
   outline: 0;
+
+  cursor: pointer;
+}
+.btn {
+  height: 48px;
+  display: inline-flex;
   border-radius: 24px;
+  border: 2px solid var(--main);
+  font-weight: 500;
+  align-items: center;
+  padding: 0 24px;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #fff;
+}
+.btn svg {
+  margin-left: 5px;
+  width: 7px;
+}
+.btn svg path {
+  fill: #fff;
+}
+.btn:hover {
+  background: var(--main);
 }

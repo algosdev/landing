@@ -1,9 +1,128 @@
 .wrapper {
   min-height: 500px;
-  height: 110vh;
+  height: 120vh;
   max-height: 800px;
-  img {
-    width: 100%;
-    height: auto;
+
+  .inner {
+    background: var(--black);
+    position: relative;
+    height: 100%;
+    .slider {
+      margin-left: auto;
+      width: 72%;
+      height: 100%;
+      position: relative;
+      & > img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        z-index: 1;
+      }
+      .main {
+        height: 100%;
+        .count {
+          position: absolute;
+          top: 10%;
+          left: 100px;
+          z-index: 2;
+          font-size: 182px;
+          font-weight: 800;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: rgb(214, 214, 214);
+          background: transparent no-repeat;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .content {
+          color: #fff;
+          padding: 150px 0;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 3;
+          .location {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 36px;
+          }
+          .title {
+            white-space: nowrap;
+            font-size: 110px;
+            line-height: 120px;
+            color: var(--main);
+            font-weight: 700;
+          }
+          .desc {
+            font-size: 18px;
+            text-transform: uppercase;
+            line-height: 24px;
+            letter-spacing: 5px;
+          }
+          a {
+            margin-top: 30px;
+          }
+        }
+      }
+      .caption_img {
+        width: 300px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -150px;
+      }
+    }
+  }
+  .control {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100px;
+    width: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    button {
+      border: 0;
+      background: #fff;
+      border-radius: 0;
+      svg {
+        width: 20px;
+      }
+    }
+  }
+  .follow {
+    position: absolute;
+    left: 16px;
+    color: #fff;
+    height: 400px;
+    bottom: 100px;
+    svg path {
+      fill: #fff;
+    }
+    display: flex;
+    flex-direction: column;
+    .txt {
+      display: flex;
+      height: 200px;
+      align-items: center;
+      flex-direction: row-reverse;
+      transform: rotate(-90deg);
+      .line {
+        margin: 0 10px;
+        height: 3px;
+        background: #fff;
+        width: 70px;
+        border-radius: 1px;
+      }
+    }
+    .socials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      a {
+        margin: 5px 0;
+      }
+    }
   }
 }
