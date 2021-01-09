@@ -3,6 +3,7 @@ import style from './carousel.module.scss'
 import Slider from 'react-slick'
 import Lightbox from 'react-image-lightbox'
 import { ZoomInIcon } from '../svg'
+import Fade from 'react-reveal/Fade'
 const carouselData = [
   {
     type: 'project management',
@@ -62,29 +63,33 @@ function Carousel() {
   }
   return (
     <>
-      <div className={style.wrapper}>
-        <Slider {...settings}>
-          {carouselData.map((slide, index) => (
-            <div className={style.slide} key={index}>
-              <div className={style.inner}>
-                <img src={slide.img} alt={slide.location} />
-                <div className={style.location}>{slide.location}</div>
-                <div className={style.type}>{slide.type}</div>
-                <button
-                  className={style.zoom}
-                  onClick={() => setIsLightboxOpen(true)}
-                >
-                  <ZoomInIcon />
-                </button>
+      <div className={style.wrapper} id='section4'>
+        <Fade bottom>
+          <Slider {...settings}>
+            {carouselData.map((slide, index) => (
+              <div className={style.slide} key={index}>
+                <div className={style.inner}>
+                  <img src={slide.img} alt={slide.location} />
+                  <div className={style.location}>{slide.location}</div>
+                  <div className={style.type}>{slide.type}</div>
+                  <button
+                    className={style.zoom}
+                    onClick={() => setIsLightboxOpen(true)}
+                  >
+                    <ZoomInIcon />
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
-        </Slider>
-        <div className={style.btn}>
-          <a href='' className='btn'>
-            View All Projects
-          </a>
-        </div>
+            ))}
+          </Slider>
+        </Fade>
+        <Fade bottom>
+          <div className={style.btn}>
+            <a href='' className='btn'>
+              View All Projects
+            </a>
+          </div>
+        </Fade>
       </div>
 
       {isLightboxOpen && (

@@ -51,6 +51,18 @@ img {
   z-index: 3;
   transform: scale(2);
 }
+.nav_container .slick-arrow {
+  display: none !important;
+}
+.nav_container .slick-slide img {
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+.nav_container .slick-slider,
+.nav_container .slick-slider div {
+  height: 100%;
+}
 .slick-arrow::before {
   color: #fff;
   z-index: 4;
@@ -126,7 +138,7 @@ textarea {
   width: 100%;
   padding: 6px 0;
   background: transparent;
-  border-bottom: 1px solid var(--grey-bg);
+  border-bottom: 1px solid var(--grey);
   outline: 0;
   font-size: 16px;
 }

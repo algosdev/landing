@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import style from './header.module.scss'
 import { PhoneIcon } from '../svg'
 import { motion, useAnimation, AnimatePresence } from 'framer-motion'
+import Scrollspy from 'react-scrollspy'
 const navListData = ['HOME', 'ABOUT', 'OUR SERVICES', 'PROJECTS', 'CONTACT US']
 function NavBar() {
   const [isOnTop, setIsOnTop] = useState(true)
@@ -104,13 +105,19 @@ function NavBar() {
           <div className={style.logo}>
             <img src='/images/logo.png' alt='Logo' />
           </div>
-          <ul className={style.navlist}>
+          {/* <ul className={style.navlist}> */}
+          <Scrollspy
+            className={style.navlist}
+            items={['section1', 'section2', 'section3', 'section4', 'section5']}
+            currentClassName={style.active}
+          >
             {navListData.map((item, index) => (
-              <li className={false ? style.active : ''} key={index}>
-                {item}
+              <li key={index}>
+                <a href={`#section${index + 1}`}>{item}</a>
               </li>
             ))}
-          </ul>
+          </Scrollspy>
+          {/* </ul> */}
           <div className={style.phoneNum}>
             <PhoneIcon /> <span>{'+1-300-123-1234'}</span>
           </div>
@@ -124,7 +131,16 @@ function NavBar() {
               transition={{ type: 'tween' }}
               className={style.mobile_menu}
             >
-              <ul>
+              <Scrollspy
+                items={[
+                  'section1',
+                  'section2',
+                  'section3',
+                  'section4',
+                  'section5',
+                ]}
+                currentClassName={style.active}
+              >
                 {navListData.map((item, index) => (
                   <li
                     className={false ? style.active : ''}
@@ -134,7 +150,7 @@ function NavBar() {
                     {item}
                   </li>
                 ))}
-              </ul>
+              </Scrollspy>
             </motion.div>
           )}
         </AnimatePresence>
