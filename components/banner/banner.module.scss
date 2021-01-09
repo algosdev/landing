@@ -1,8 +1,10 @@
 .wrapper {
   min-height: 500px;
-  height: 120vh;
+  height: 110vh;
   max-height: 800px;
-
+  @media (max-width: 576px) {
+    height: 90vh;
+  }
   .inner {
     background: var(--black);
     position: relative;
@@ -12,56 +14,80 @@
       width: 72%;
       height: 100%;
       position: relative;
+      @media (max-width: 1140px) {
+        width: 100%;
+        margin: 0;
+      }
       & > img {
         width: 100%;
         object-fit: cover;
         height: 100%;
         z-index: 1;
       }
-      .main {
-        height: 100%;
-        .count {
-          position: absolute;
-          top: 10%;
-          left: 100px;
-          z-index: 2;
-          font-size: 182px;
-          font-weight: 800;
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: rgb(214, 214, 214);
-          background: transparent no-repeat;
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
+
+      .count {
+        position: absolute;
+        top: 10%;
+        left: 100px;
+        z-index: 2;
+        font-size: 182px;
+        font-weight: 800;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgb(214, 214, 214);
+        background: transparent no-repeat;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @media (max-width: 1140px) {
+          display: none;
         }
-        .content {
-          color: #fff;
-          padding: 150px 0;
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 3;
+      }
+      .content {
+        color: #fff;
+        padding-top: 100px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        .location {
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 48px;
+        }
+        .title {
+          white-space: nowrap;
+          font-size: 110px;
+          line-height: 120px;
+          color: var(--main);
+          font-weight: 700;
+        }
+        .desc {
+          font-size: 18px;
+          text-transform: uppercase;
+          line-height: 24px;
+          letter-spacing: 5px;
+        }
+        a {
+          margin-top: 30px;
+        }
+        @media (max-width: 1140px) {
+          text-align: center;
+        }
+        @media (max-width: 1000px) {
           .location {
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 36px;
+            font-size: 20px;
           }
           .title {
-            white-space: nowrap;
-            font-size: 110px;
-            line-height: 120px;
-            color: var(--main);
-            font-weight: 700;
+            font-size: 60px;
           }
-          .desc {
-            font-size: 18px;
-            text-transform: uppercase;
-            line-height: 24px;
-            letter-spacing: 5px;
-          }
-          a {
-            margin-top: 30px;
+        }
+        @media (max-width: 576px) {
+          padding-top: 0;
+          .title {
+            font-size: 60px;
+            line-height: 80px;
           }
         }
       }
@@ -71,37 +97,51 @@
         top: 50%;
         transform: translateY(-50%);
         left: -150px;
+        @media (max-width: 1140px) {
+          display: none;
+        }
       }
     }
   }
   .control {
     position: absolute;
+    z-index: 4;
     bottom: 0;
     right: 0;
     height: 100px;
     width: 200px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    @media (max-width: 576px) {
+      height: 60px;
+      width: 160px;
+    }
     button {
       border: 0;
       background: #fff;
       border-radius: 0;
+      outline: 0;
       svg {
-        width: 20px;
+        transform: scale(1.5);
       }
     }
   }
   .follow {
     position: absolute;
-    left: 16px;
     color: #fff;
     height: 400px;
     bottom: 100px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(calc(-50% + 32px));
+    @media (max-width: 1000px) {
+      display: none;
+    }
+
     svg path {
       fill: #fff;
     }
-    display: flex;
-    flex-direction: column;
     .txt {
       display: flex;
       height: 200px;

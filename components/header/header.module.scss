@@ -68,6 +68,7 @@
     .hamburger_cont {
       color: #fff;
       display: none;
+      -webkit-tap-highlight-color: transparent;
       align-items: center;
       height: 70px;
       @media (max-width: 1000px) {

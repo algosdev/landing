@@ -1,0 +1,123 @@
+.wrapper {
+  background: #212122;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100%;
+    @media (max-width: 1000px) {
+      grid-template-columns: 1fr;
+    }
+    .content {
+      display: grid;
+      padding: 16px;
+      grid-template-columns: 1fr 1fr;
+      padding: 100px 24px 0;
+
+      @media (max-width: 1000px) {
+        order: 2;
+        padding: 24px;
+      }
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+        .column {
+          padding: 0;
+          .copyright {
+            display: none;
+          }
+          .leading {
+            margin-top: 20px;
+          }
+          .mobile_copyright {
+            display: block;
+          }
+        }
+      }
+    }
+    .column {
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 0 24px;
+      @media (max-width: 1000px) {
+        font-size: 14px;
+      }
+      .title {
+        letter-spacing: -0.025em;
+        font-weight: 700;
+        line-height: 1.5em;
+        font-size: 48px;
+        @media (max-width: 576px) {
+          font-size: 32px;
+        }
+      }
+      .leading {
+        letter-spacing: 0.05em;
+        color: var(--grey);
+        margin-top: 10px;
+        line-height: 24px;
+        margin-top: 82px;
+      }
+      .details {
+        a {
+          display: block;
+          letter-spacing: 0.05em;
+          color: var(--grey);
+          margin-top: 10px;
+          line-height: 24px;
+        }
+      }
+      .socials {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        max-width: 200px;
+        margin: 30px 0;
+        svg path {
+          fill: #fff;
+        }
+      }
+      .mobile_copyright {
+        display: none;
+        margin-top: 30px;
+      }
+      .copyright {
+        margin-top: auto;
+      }
+      .input_container {
+        margin: 20px 0;
+        input {
+          color: #fff;
+        }
+      }
+      button {
+        background: transparent;
+        color: var(--main);
+        &:hover {
+          background: var(--main);
+          color: #fff;
+        }
+      }
+    }
+    .map_container {
+      min-height: 500px;
+      @media (max-width: 1000px) {
+        order: 1;
+        padding: 50px;
+        min-height: 300px;
+      }
+      @media (max-width: 576px) {
+        padding: 16px;
+      }
+      .map {
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+  }
+}
