@@ -147,7 +147,7 @@ function NavBar() {
                     key={index}
                     onClick={() => setIsOpen(false)}
                   >
-                    {item}
+                    <a href={`#section${index + 1}`}>{item}</a>
                   </li>
                 ))}
               </Scrollspy>
